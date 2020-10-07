@@ -25,7 +25,7 @@ then
       echo -e "$resp_h 200 OK\r\ncontent-type: text/csv; charset=utf-8\r\ncontent-disposition: attachment; filename='data.csv'; filename*=UTF-8''data.csv\r\n"
       echo "$body"
     else
-      echo -e "$resp_h $code\n\nUnknown error\n"
+      echo -e "$resp_h 400 Bad Request\n\nUnknown error with code $code\n"
     fi
   fi
 elif [ $http_type == "PUT" ]
@@ -38,4 +38,3 @@ then
 else
   echo -e "$resp_h 405 Method Not Allowed\n\n405\n"
 fi
-

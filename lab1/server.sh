@@ -12,4 +12,3 @@ do
 done
 
 rm google_id.sh
-
