@@ -33,7 +33,7 @@ then
   echo -e "$resp_h 200 OK\r\n"
   IFS='/' read -ra tmp <<< $path
   GOOGLE_ID=${tmp[1]}
-  echo -e "$http_type\r\n$path\r\n$GOOGLE_ID"
+  echo "$GOOGLE_ID"
   echo "GOOGLE_ID=$GOOGLE_ID" > google_id.sh
 else
   echo -e "$resp_h 405 Method Not Allowed\n\n405\n"
